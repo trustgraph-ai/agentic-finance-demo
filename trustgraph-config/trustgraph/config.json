@@ -1,0 +1,1776 @@
+{
+    "flow-classes": {
+        "document-rag": {
+            "class": {
+                "de-query:{class}": {
+                    "request": "non-persistent://tg/request/document-embeddings:{class}",
+                    "response": "non-persistent://tg/response/document-embeddings:{class}"
+                },
+                "document-rag:{class}": {
+                    "document-embeddings-request": "non-persistent://tg/request/document-embeddings:{class}",
+                    "document-embeddings-response": "non-persistent://tg/response/document-embeddings:{class}",
+                    "embeddings-request": "non-persistent://tg/request/embeddings:{class}",
+                    "embeddings-response": "non-persistent://tg/response/embeddings:{class}",
+                    "prompt-request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "request": "non-persistent://tg/request/document-rag:{class}",
+                    "response": "non-persistent://tg/response/document-rag:{class}"
+                },
+                "embeddings:{class}": {
+                    "request": "non-persistent://tg/request/embeddings:{class}",
+                    "response": "non-persistent://tg/response/embeddings:{class}"
+                },
+                "mcp-tool:{class}": {
+                    "request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "response": "non-persistent://tg/response/mcp-tool:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "metering-rag:{class}": {
+                    "input": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "metering:{class}": {
+                    "input": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "prompt-rag:{class}": {
+                    "request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion-rag:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "prompt:{class}": {
+                    "request": "non-persistent://tg/request/prompt:{class}",
+                    "response": "non-persistent://tg/response/prompt:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "text-completion-rag:{class}": {
+                    "request": "non-persistent://tg/request/text-completion-rag:{class}",
+                    "response": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "text-completion:{class}": {
+                    "request": "non-persistent://tg/request/text-completion:{class}",
+                    "response": "non-persistent://tg/response/text-completion:{class}"
+                }
+            },
+            "description": "DocumentRAG only",
+            "flow": {
+                "chunker:{id}": {
+                    "input": "persistent://tg/flow/text-document-load:{id}",
+                    "output": "persistent://tg/flow/chunk-load:{id}"
+                },
+                "de-write:{id}": {
+                    "input": "persistent://tg/flow/document-embeddings-store:{id}"
+                },
+                "document-embeddings:{id}": {
+                    "embeddings-request": "non-persistent://tg/request/embeddings:{class}",
+                    "embeddings-response": "non-persistent://tg/response/embeddings:{class}",
+                    "input": "persistent://tg/flow/chunk-load:{id}",
+                    "output": "persistent://tg/flow/document-embeddings-store:{id}"
+                },
+                "pdf-decoder:{id}": {
+                    "input": "persistent://tg/flow/document-load:{id}",
+                    "output": "persistent://tg/flow/text-document-load:{id}"
+                }
+            },
+            "interfaces": {
+                "document-embeddings": {
+                    "request": "non-persistent://tg/request/document-embeddings:{class}",
+                    "response": "non-persistent://tg/response/document-embeddings:{class}"
+                },
+                "document-embeddings-store": "persistent://tg/flow/document-embeddings-store:{id}",
+                "document-load": "persistent://tg/flow/document-load:{id}",
+                "document-rag": {
+                    "request": "non-persistent://tg/request/document-rag:{class}",
+                    "response": "non-persistent://tg/response/document-rag:{class}"
+                },
+                "embeddings": {
+                    "request": "non-persistent://tg/request/embeddings:{class}",
+                    "response": "non-persistent://tg/response/embeddings:{class}"
+                },
+                "mcp-tool": {
+                    "request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "response": "non-persistent://tg/response/mcp-tool:{class}"
+                },
+                "prompt": {
+                    "request": "non-persistent://tg/request/prompt:{class}",
+                    "response": "non-persistent://tg/response/prompt:{class}"
+                },
+                "text-completion": {
+                    "request": "non-persistent://tg/request/text-completion:{class}",
+                    "response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "text-load": "persistent://tg/flow/text-document-load:{id}"
+            },
+            "tags": [
+                "document-rag"
+            ]
+        },
+        "document-rag+graph-rag": {
+            "class": {
+                "de-query:{class}": {
+                    "request": "non-persistent://tg/request/document-embeddings:{class}",
+                    "response": "non-persistent://tg/response/document-embeddings:{class}"
+                },
+                "document-rag:{class}": {
+                    "document-embeddings-request": "non-persistent://tg/request/document-embeddings:{class}",
+                    "document-embeddings-response": "non-persistent://tg/response/document-embeddings:{class}",
+                    "embeddings-request": "non-persistent://tg/request/embeddings:{class}",
+                    "embeddings-response": "non-persistent://tg/response/embeddings:{class}",
+                    "prompt-request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "request": "non-persistent://tg/request/document-rag:{class}",
+                    "response": "non-persistent://tg/response/document-rag:{class}"
+                },
+                "embeddings:{class}": {
+                    "request": "non-persistent://tg/request/embeddings:{class}",
+                    "response": "non-persistent://tg/response/embeddings:{class}"
+                },
+                "ge-query:{class}": {
+                    "request": "non-persistent://tg/request/graph-embeddings:{class}",
+                    "response": "non-persistent://tg/response/graph-embeddings:{class}"
+                },
+                "graph-rag:{class}": {
+                    "embeddings-request": "non-persistent://tg/request/embeddings:{class}",
+                    "embeddings-response": "non-persistent://tg/response/embeddings:{class}",
+                    "graph-embeddings-request": "non-persistent://tg/request/graph-embeddings:{class}",
+                    "graph-embeddings-response": "non-persistent://tg/response/graph-embeddings:{class}",
+                    "prompt-request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "request": "non-persistent://tg/request/graph-rag:{class}",
+                    "response": "non-persistent://tg/response/graph-rag:{class}",
+                    "triples-request": "non-persistent://tg/request/triples:{class}",
+                    "triples-response": "non-persistent://tg/response/triples:{class}"
+                },
+                "mcp-tool:{class}": {
+                    "request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "response": "non-persistent://tg/response/mcp-tool:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "metering-rag:{class}": {
+                    "input": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "metering:{class}": {
+                    "input": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "prompt-rag:{class}": {
+                    "request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion-rag:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "prompt:{class}": {
+                    "request": "non-persistent://tg/request/prompt:{class}",
+                    "response": "non-persistent://tg/response/prompt:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "text-completion-rag:{class}": {
+                    "request": "non-persistent://tg/request/text-completion-rag:{class}",
+                    "response": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "text-completion:{class}": {
+                    "request": "non-persistent://tg/request/text-completion:{class}",
+                    "response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "triples-query:{class}": {
+                    "request": "non-persistent://tg/request/triples:{class}",
+                    "response": "non-persistent://tg/response/triples:{class}"
+                }
+            },
+            "description": "Supports GraphRAG and document RAG, no core creation",
+            "flow": {
+                "agent-manager:{id}": {
+                    "graph-rag-request": "non-persistent://tg/request/graph-rag:{class}",
+                    "graph-rag-response": "non-persistent://tg/response/graph-rag:{class}",
+                    "mcp-tool-request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "mcp-tool-response": "non-persistent://tg/response/mcp-tool:{class}",
+                    "next": "non-persistent://tg/request/agent:{id}",
+                    "prompt-request": "non-persistent://tg/request/prompt:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt:{class}",
+                    "request": "non-persistent://tg/request/agent:{id}",
+                    "response": "non-persistent://tg/response/agent:{id}",
+                    "structured-query-request": "non-persistent://tg/request/structured-query:{class}",
+                    "structured-query-response": "non-persistent://tg/response/structured-query:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "chunker:{id}": {
+                    "input": "persistent://tg/flow/text-document-load:{id}",
+                    "output": "persistent://tg/flow/chunk-load:{id}"
+                },
+                "de-write:{id}": {
+                    "input": "persistent://tg/flow/document-embeddings-store:{id}"
+                },
+                "document-embeddings:{id}": {
+                    "embeddings-request": "non-persistent://tg/request/embeddings:{class}",
+                    "embeddings-response": "non-persistent://tg/response/embeddings:{class}",
+                    "input": "persistent://tg/flow/chunk-load:{id}",
+                    "output": "persistent://tg/flow/document-embeddings-store:{id}"
+                },
+                "ge-write:{id}": {
+                    "input": "persistent://tg/flow/graph-embeddings-store:{id}"
+                },
+                "graph-embeddings:{id}": {
+                    "embeddings-request": "non-persistent://tg/request/embeddings:{class}",
+                    "embeddings-response": "non-persistent://tg/response/embeddings:{class}",
+                    "input": "persistent://tg/flow/entity-contexts-load:{id}",
+                    "output": "persistent://tg/flow/graph-embeddings-store:{id}"
+                },
+                "kg-extract-definitions:{id}": {
+                    "entity-contexts": "persistent://tg/flow/entity-contexts-load:{id}",
+                    "input": "persistent://tg/flow/chunk-load:{id}",
+                    "prompt-request": "non-persistent://tg/request/prompt:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt:{class}",
+                    "triples": "persistent://tg/flow/triples-store:{id}"
+                },
+                "kg-extract-relationships:{id}": {
+                    "input": "persistent://tg/flow/chunk-load:{id}",
+                    "prompt-request": "non-persistent://tg/request/prompt:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt:{class}",
+                    "triples": "persistent://tg/flow/triples-store:{id}"
+                },
+                "pdf-decoder:{id}": {
+                    "input": "persistent://tg/flow/document-load:{id}",
+                    "output": "persistent://tg/flow/text-document-load:{id}"
+                },
+                "triples-write:{id}": {
+                    "input": "persistent://tg/flow/triples-store:{id}"
+                }
+            },
+            "interfaces": {
+                "agent": {
+                    "request": "non-persistent://tg/request/agent:{id}",
+                    "response": "non-persistent://tg/response/agent:{id}"
+                },
+                "document-embeddings": {
+                    "request": "non-persistent://tg/request/document-embeddings:{class}",
+                    "response": "non-persistent://tg/response/document-embeddings:{class}"
+                },
+                "document-embeddings-store": "persistent://tg/flow/document-embeddings-store:{id}",
+                "document-load": "persistent://tg/flow/document-load:{id}",
+                "document-rag": {
+                    "request": "non-persistent://tg/request/document-rag:{class}",
+                    "response": "non-persistent://tg/response/document-rag:{class}"
+                },
+                "embeddings": {
+                    "request": "non-persistent://tg/request/embeddings:{class}",
+                    "response": "non-persistent://tg/response/embeddings:{class}"
+                },
+                "entity-contexts-load": "persistent://tg/flow/entity-contexts-load:{id}",
+                "graph-embeddings": {
+                    "request": "non-persistent://tg/request/graph-embeddings:{class}",
+                    "response": "non-persistent://tg/response/graph-embeddings:{class}"
+                },
+                "graph-embeddings-store": "persistent://tg/flow/graph-embeddings-store:{id}",
+                "graph-rag": {
+                    "request": "non-persistent://tg/request/graph-rag:{class}",
+                    "response": "non-persistent://tg/response/graph-rag:{class}"
+                },
+                "mcp-tool": {
+                    "request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "response": "non-persistent://tg/response/mcp-tool:{class}"
+                },
+                "prompt": {
+                    "request": "non-persistent://tg/request/prompt:{class}",
+                    "response": "non-persistent://tg/response/prompt:{class}"
+                },
+                "text-completion": {
+                    "request": "non-persistent://tg/request/text-completion:{class}",
+                    "response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "text-load": "persistent://tg/flow/text-document-load:{id}",
+                "triples": {
+                    "request": "non-persistent://tg/request/triples:{class}",
+                    "response": "non-persistent://tg/response/triples:{class}"
+                },
+                "triples-store": "persistent://tg/flow/triples-store:{id}"
+            },
+            "tags": [
+                "document-rag",
+                "graph-rag",
+                "knowledge-extraction"
+            ]
+        },
+        "document-rag+graph-rag+kgcore": {
+            "class": {
+                "de-query:{class}": {
+                    "request": "non-persistent://tg/request/document-embeddings:{class}",
+                    "response": "non-persistent://tg/response/document-embeddings:{class}"
+                },
+                "document-rag:{class}": {
+                    "document-embeddings-request": "non-persistent://tg/request/document-embeddings:{class}",
+                    "document-embeddings-response": "non-persistent://tg/response/document-embeddings:{class}",
+                    "embeddings-request": "non-persistent://tg/request/embeddings:{class}",
+                    "embeddings-response": "non-persistent://tg/response/embeddings:{class}",
+                    "prompt-request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "request": "non-persistent://tg/request/document-rag:{class}",
+                    "response": "non-persistent://tg/response/document-rag:{class}"
+                },
+                "embeddings:{class}": {
+                    "request": "non-persistent://tg/request/embeddings:{class}",
+                    "response": "non-persistent://tg/response/embeddings:{class}"
+                },
+                "ge-query:{class}": {
+                    "request": "non-persistent://tg/request/graph-embeddings:{class}",
+                    "response": "non-persistent://tg/response/graph-embeddings:{class}"
+                },
+                "graph-rag:{class}": {
+                    "embeddings-request": "non-persistent://tg/request/embeddings:{class}",
+                    "embeddings-response": "non-persistent://tg/response/embeddings:{class}",
+                    "graph-embeddings-request": "non-persistent://tg/request/graph-embeddings:{class}",
+                    "graph-embeddings-response": "non-persistent://tg/response/graph-embeddings:{class}",
+                    "prompt-request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "request": "non-persistent://tg/request/graph-rag:{class}",
+                    "response": "non-persistent://tg/response/graph-rag:{class}",
+                    "triples-request": "non-persistent://tg/request/triples:{class}",
+                    "triples-response": "non-persistent://tg/response/triples:{class}"
+                },
+                "mcp-tool:{class}": {
+                    "request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "response": "non-persistent://tg/response/mcp-tool:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "metering-rag:{class}": {
+                    "input": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "metering:{class}": {
+                    "input": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "prompt-rag:{class}": {
+                    "request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion-rag:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "prompt:{class}": {
+                    "request": "non-persistent://tg/request/prompt:{class}",
+                    "response": "non-persistent://tg/response/prompt:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "text-completion-rag:{class}": {
+                    "request": "non-persistent://tg/request/text-completion-rag:{class}",
+                    "response": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "text-completion:{class}": {
+                    "request": "non-persistent://tg/request/text-completion:{class}",
+                    "response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "triples-query:{class}": {
+                    "request": "non-persistent://tg/request/triples:{class}",
+                    "response": "non-persistent://tg/response/triples:{class}"
+                }
+            },
+            "description": "GraphRAG + DocumentRAG + knowledge core creation",
+            "flow": {
+                "agent-manager:{id}": {
+                    "graph-rag-request": "non-persistent://tg/request/graph-rag:{class}",
+                    "graph-rag-response": "non-persistent://tg/response/graph-rag:{class}",
+                    "mcp-tool-request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "mcp-tool-response": "non-persistent://tg/response/mcp-tool:{class}",
+                    "next": "non-persistent://tg/request/agent:{id}",
+                    "prompt-request": "non-persistent://tg/request/prompt:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt:{class}",
+                    "request": "non-persistent://tg/request/agent:{id}",
+                    "response": "non-persistent://tg/response/agent:{id}",
+                    "structured-query-request": "non-persistent://tg/request/structured-query:{class}",
+                    "structured-query-response": "non-persistent://tg/response/structured-query:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "chunker:{id}": {
+                    "input": "persistent://tg/flow/text-document-load:{id}",
+                    "output": "persistent://tg/flow/chunk-load:{id}"
+                },
+                "de-write:{id}": {
+                    "input": "persistent://tg/flow/document-embeddings-store:{id}"
+                },
+                "document-embeddings:{id}": {
+                    "embeddings-request": "non-persistent://tg/request/embeddings:{class}",
+                    "embeddings-response": "non-persistent://tg/response/embeddings:{class}",
+                    "input": "persistent://tg/flow/chunk-load:{id}",
+                    "output": "persistent://tg/flow/document-embeddings-store:{id}"
+                },
+                "ge-write:{id}": {
+                    "input": "persistent://tg/flow/graph-embeddings-store:{id}"
+                },
+                "graph-embeddings:{id}": {
+                    "embeddings-request": "non-persistent://tg/request/embeddings:{class}",
+                    "embeddings-response": "non-persistent://tg/response/embeddings:{class}",
+                    "input": "persistent://tg/flow/entity-contexts-load:{id}",
+                    "output": "persistent://tg/flow/graph-embeddings-store:{id}"
+                },
+                "kg-extract-definitions:{id}": {
+                    "entity-contexts": "persistent://tg/flow/entity-contexts-load:{id}",
+                    "input": "persistent://tg/flow/chunk-load:{id}",
+                    "prompt-request": "non-persistent://tg/request/prompt:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt:{class}",
+                    "triples": "persistent://tg/flow/triples-store:{id}"
+                },
+                "kg-extract-relationships:{id}": {
+                    "input": "persistent://tg/flow/chunk-load:{id}",
+                    "prompt-request": "non-persistent://tg/request/prompt:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt:{class}",
+                    "triples": "persistent://tg/flow/triples-store:{id}"
+                },
+                "kg-store:{id}": {
+                    "graph-embeddings-input": "persistent://tg/flow/graph-embeddings-store:{id}",
+                    "triples-input": "persistent://tg/flow/triples-store:{id}"
+                },
+                "pdf-decoder:{id}": {
+                    "input": "persistent://tg/flow/document-load:{id}",
+                    "output": "persistent://tg/flow/text-document-load:{id}"
+                },
+                "triples-write:{id}": {
+                    "input": "persistent://tg/flow/triples-store:{id}"
+                }
+            },
+            "interfaces": {
+                "agent": {
+                    "request": "non-persistent://tg/request/agent:{id}",
+                    "response": "non-persistent://tg/response/agent:{id}"
+                },
+                "document-embeddings": {
+                    "request": "non-persistent://tg/request/document-embeddings:{class}",
+                    "response": "non-persistent://tg/response/document-embeddings:{class}"
+                },
+                "document-embeddings-store": "persistent://tg/flow/document-embeddings-store:{id}",
+                "document-load": "persistent://tg/flow/document-load:{id}",
+                "document-rag": {
+                    "request": "non-persistent://tg/request/document-rag:{class}",
+                    "response": "non-persistent://tg/response/document-rag:{class}"
+                },
+                "embeddings": {
+                    "request": "non-persistent://tg/request/embeddings:{class}",
+                    "response": "non-persistent://tg/response/embeddings:{class}"
+                },
+                "entity-contexts-load": "persistent://tg/flow/entity-contexts-load:{id}",
+                "graph-embeddings": {
+                    "request": "non-persistent://tg/request/graph-embeddings:{class}",
+                    "response": "non-persistent://tg/response/graph-embeddings:{class}"
+                },
+                "graph-embeddings-store": "persistent://tg/flow/graph-embeddings-store:{id}",
+                "graph-rag": {
+                    "request": "non-persistent://tg/request/graph-rag:{class}",
+                    "response": "non-persistent://tg/response/graph-rag:{class}"
+                },
+                "mcp-tool": {
+                    "request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "response": "non-persistent://tg/response/mcp-tool:{class}"
+                },
+                "prompt": {
+                    "request": "non-persistent://tg/request/prompt:{class}",
+                    "response": "non-persistent://tg/response/prompt:{class}"
+                },
+                "text-completion": {
+                    "request": "non-persistent://tg/request/text-completion:{class}",
+                    "response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "text-load": "persistent://tg/flow/text-document-load:{id}",
+                "triples": {
+                    "request": "non-persistent://tg/request/triples:{class}",
+                    "response": "non-persistent://tg/response/triples:{class}"
+                },
+                "triples-store": "persistent://tg/flow/triples-store:{id}"
+            },
+            "tags": [
+                "document-rag",
+                "graph-rag",
+                "knowledge-extraction"
+            ]
+        },
+        "graph-rag": {
+            "class": {
+                "embeddings:{class}": {
+                    "request": "non-persistent://tg/request/embeddings:{class}",
+                    "response": "non-persistent://tg/response/embeddings:{class}"
+                },
+                "ge-query:{class}": {
+                    "request": "non-persistent://tg/request/graph-embeddings:{class}",
+                    "response": "non-persistent://tg/response/graph-embeddings:{class}"
+                },
+                "graph-rag:{class}": {
+                    "embeddings-request": "non-persistent://tg/request/embeddings:{class}",
+                    "embeddings-response": "non-persistent://tg/response/embeddings:{class}",
+                    "graph-embeddings-request": "non-persistent://tg/request/graph-embeddings:{class}",
+                    "graph-embeddings-response": "non-persistent://tg/response/graph-embeddings:{class}",
+                    "prompt-request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "request": "non-persistent://tg/request/graph-rag:{class}",
+                    "response": "non-persistent://tg/response/graph-rag:{class}",
+                    "triples-request": "non-persistent://tg/request/triples:{class}",
+                    "triples-response": "non-persistent://tg/response/triples:{class}"
+                },
+                "mcp-tool:{class}": {
+                    "request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "response": "non-persistent://tg/response/mcp-tool:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "metering-rag:{class}": {
+                    "input": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "metering:{class}": {
+                    "input": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "prompt-rag:{class}": {
+                    "request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion-rag:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "prompt:{class}": {
+                    "request": "non-persistent://tg/request/prompt:{class}",
+                    "response": "non-persistent://tg/response/prompt:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "text-completion-rag:{class}": {
+                    "request": "non-persistent://tg/request/text-completion-rag:{class}",
+                    "response": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "text-completion:{class}": {
+                    "request": "non-persistent://tg/request/text-completion:{class}",
+                    "response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "triples-query:{class}": {
+                    "request": "non-persistent://tg/request/triples:{class}",
+                    "response": "non-persistent://tg/response/triples:{class}"
+                }
+            },
+            "description": "GraphRAG only",
+            "flow": {
+                "agent-manager:{id}": {
+                    "graph-rag-request": "non-persistent://tg/request/graph-rag:{class}",
+                    "graph-rag-response": "non-persistent://tg/response/graph-rag:{class}",
+                    "mcp-tool-request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "mcp-tool-response": "non-persistent://tg/response/mcp-tool:{class}",
+                    "next": "non-persistent://tg/request/agent:{id}",
+                    "prompt-request": "non-persistent://tg/request/prompt:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt:{class}",
+                    "request": "non-persistent://tg/request/agent:{id}",
+                    "response": "non-persistent://tg/response/agent:{id}",
+                    "structured-query-request": "non-persistent://tg/request/structured-query:{class}",
+                    "structured-query-response": "non-persistent://tg/response/structured-query:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "chunker:{id}": {
+                    "input": "persistent://tg/flow/text-document-load:{id}",
+                    "output": "persistent://tg/flow/chunk-load:{id}"
+                },
+                "ge-write:{id}": {
+                    "input": "persistent://tg/flow/graph-embeddings-store:{id}"
+                },
+                "graph-embeddings:{id}": {
+                    "embeddings-request": "non-persistent://tg/request/embeddings:{class}",
+                    "embeddings-response": "non-persistent://tg/response/embeddings:{class}",
+                    "input": "persistent://tg/flow/entity-contexts-load:{id}",
+                    "output": "persistent://tg/flow/graph-embeddings-store:{id}"
+                },
+                "kg-extract-definitions:{id}": {
+                    "entity-contexts": "persistent://tg/flow/entity-contexts-load:{id}",
+                    "input": "persistent://tg/flow/chunk-load:{id}",
+                    "prompt-request": "non-persistent://tg/request/prompt:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt:{class}",
+                    "triples": "persistent://tg/flow/triples-store:{id}"
+                },
+                "kg-extract-relationships:{id}": {
+                    "input": "persistent://tg/flow/chunk-load:{id}",
+                    "prompt-request": "non-persistent://tg/request/prompt:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt:{class}",
+                    "triples": "persistent://tg/flow/triples-store:{id}"
+                },
+                "pdf-decoder:{id}": {
+                    "input": "persistent://tg/flow/document-load:{id}",
+                    "output": "persistent://tg/flow/text-document-load:{id}"
+                },
+                "triples-write:{id}": {
+                    "input": "persistent://tg/flow/triples-store:{id}"
+                }
+            },
+            "interfaces": {
+                "agent": {
+                    "request": "non-persistent://tg/request/agent:{id}",
+                    "response": "non-persistent://tg/response/agent:{id}"
+                },
+                "document-load": "persistent://tg/flow/document-load:{id}",
+                "embeddings": {
+                    "request": "non-persistent://tg/request/embeddings:{class}",
+                    "response": "non-persistent://tg/response/embeddings:{class}"
+                },
+                "entity-contexts-load": "persistent://tg/flow/entity-contexts-load:{id}",
+                "graph-embeddings": {
+                    "request": "non-persistent://tg/request/graph-embeddings:{class}",
+                    "response": "non-persistent://tg/response/graph-embeddings:{class}"
+                },
+                "graph-embeddings-store": "persistent://tg/flow/graph-embeddings-store:{id}",
+                "graph-rag": {
+                    "request": "non-persistent://tg/request/graph-rag:{class}",
+                    "response": "non-persistent://tg/response/graph-rag:{class}"
+                },
+                "mcp-tool": {
+                    "request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "response": "non-persistent://tg/response/mcp-tool:{class}"
+                },
+                "prompt": {
+                    "request": "non-persistent://tg/request/prompt:{class}",
+                    "response": "non-persistent://tg/response/prompt:{class}"
+                },
+                "text-completion": {
+                    "request": "non-persistent://tg/request/text-completion:{class}",
+                    "response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "text-load": "persistent://tg/flow/text-document-load:{id}",
+                "triples": {
+                    "request": "non-persistent://tg/request/triples:{class}",
+                    "response": "non-persistent://tg/response/triples:{class}"
+                },
+                "triples-store": "persistent://tg/flow/triples-store:{id}"
+            },
+            "tags": [
+                "graph-rag",
+                "knowledge-extraction"
+            ]
+        },
+        "graph-rag+agent-extract": {
+            "class": {
+                "embeddings:{class}": {
+                    "request": "non-persistent://tg/request/embeddings:{class}",
+                    "response": "non-persistent://tg/response/embeddings:{class}"
+                },
+                "ge-query:{class}": {
+                    "request": "non-persistent://tg/request/graph-embeddings:{class}",
+                    "response": "non-persistent://tg/response/graph-embeddings:{class}"
+                },
+                "graph-rag:{class}": {
+                    "embeddings-request": "non-persistent://tg/request/embeddings:{class}",
+                    "embeddings-response": "non-persistent://tg/response/embeddings:{class}",
+                    "graph-embeddings-request": "non-persistent://tg/request/graph-embeddings:{class}",
+                    "graph-embeddings-response": "non-persistent://tg/response/graph-embeddings:{class}",
+                    "prompt-request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "request": "non-persistent://tg/request/graph-rag:{class}",
+                    "response": "non-persistent://tg/response/graph-rag:{class}",
+                    "triples-request": "non-persistent://tg/request/triples:{class}",
+                    "triples-response": "non-persistent://tg/response/triples:{class}"
+                },
+                "mcp-tool:{class}": {
+                    "request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "response": "non-persistent://tg/response/mcp-tool:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "metering-rag:{class}": {
+                    "input": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "metering:{class}": {
+                    "input": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "prompt-rag:{class}": {
+                    "request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion-rag:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "prompt:{class}": {
+                    "request": "non-persistent://tg/request/prompt:{class}",
+                    "response": "non-persistent://tg/response/prompt:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "text-completion-rag:{class}": {
+                    "request": "non-persistent://tg/request/text-completion-rag:{class}",
+                    "response": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "text-completion:{class}": {
+                    "request": "non-persistent://tg/request/text-completion:{class}",
+                    "response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "triples-query:{class}": {
+                    "request": "non-persistent://tg/request/triples:{class}",
+                    "response": "non-persistent://tg/response/triples:{class}"
+                }
+            },
+            "description": "GraphRAG + agent extract",
+            "flow": {
+                "agent-manager:{id}": {
+                    "graph-rag-request": "non-persistent://tg/request/graph-rag:{class}",
+                    "graph-rag-response": "non-persistent://tg/response/graph-rag:{class}",
+                    "mcp-tool-request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "mcp-tool-response": "non-persistent://tg/response/mcp-tool:{class}",
+                    "next": "non-persistent://tg/request/agent:{id}",
+                    "prompt-request": "non-persistent://tg/request/prompt:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt:{class}",
+                    "request": "non-persistent://tg/request/agent:{id}",
+                    "response": "non-persistent://tg/response/agent:{id}",
+                    "structured-query-request": "non-persistent://tg/request/structured-query:{class}",
+                    "structured-query-response": "non-persistent://tg/response/structured-query:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "chunker:{id}": {
+                    "input": "persistent://tg/flow/text-document-load:{id}",
+                    "output": "persistent://tg/flow/chunk-load:{id}"
+                },
+                "ge-write:{id}": {
+                    "input": "persistent://tg/flow/graph-embeddings-store:{id}"
+                },
+                "graph-embeddings:{id}": {
+                    "embeddings-request": "non-persistent://tg/request/embeddings:{class}",
+                    "embeddings-response": "non-persistent://tg/response/embeddings:{class}",
+                    "input": "persistent://tg/flow/entity-contexts-load:{id}",
+                    "output": "persistent://tg/flow/graph-embeddings-store:{id}"
+                },
+                "kg-extract-agent:{id}": {
+                    "agent-request": "non-persistent://tg/request/agent:{id}",
+                    "agent-response": "non-persistent://tg/response/agent:{id}",
+                    "entity-contexts": "persistent://tg/flow/entity-contexts-load:{id}",
+                    "input": "persistent://tg/flow/chunk-load:{id}",
+                    "triples": "persistent://tg/flow/triples-store:{id}"
+                },
+                "pdf-decoder:{id}": {
+                    "input": "persistent://tg/flow/document-load:{id}",
+                    "output": "persistent://tg/flow/text-document-load:{id}"
+                },
+                "triples-write:{id}": {
+                    "input": "persistent://tg/flow/triples-store:{id}"
+                }
+            },
+            "interfaces": {
+                "agent": {
+                    "request": "non-persistent://tg/request/agent:{id}",
+                    "response": "non-persistent://tg/response/agent:{id}"
+                },
+                "document-load": "persistent://tg/flow/document-load:{id}",
+                "embeddings": {
+                    "request": "non-persistent://tg/request/embeddings:{class}",
+                    "response": "non-persistent://tg/response/embeddings:{class}"
+                },
+                "entity-contexts-load": "persistent://tg/flow/entity-contexts-load:{id}",
+                "graph-embeddings": {
+                    "request": "non-persistent://tg/request/graph-embeddings:{class}",
+                    "response": "non-persistent://tg/response/graph-embeddings:{class}"
+                },
+                "graph-embeddings-store": "persistent://tg/flow/graph-embeddings-store:{id}",
+                "graph-rag": {
+                    "request": "non-persistent://tg/request/graph-rag:{class}",
+                    "response": "non-persistent://tg/response/graph-rag:{class}"
+                },
+                "mcp-tool": {
+                    "request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "response": "non-persistent://tg/response/mcp-tool:{class}"
+                },
+                "prompt": {
+                    "request": "non-persistent://tg/request/prompt:{class}",
+                    "response": "non-persistent://tg/response/prompt:{class}"
+                },
+                "text-completion": {
+                    "request": "non-persistent://tg/request/text-completion:{class}",
+                    "response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "text-load": "persistent://tg/flow/text-document-load:{id}",
+                "triples": {
+                    "request": "non-persistent://tg/request/triples:{class}",
+                    "response": "non-persistent://tg/response/triples:{class}"
+                },
+                "triples-store": "persistent://tg/flow/triples-store:{id}"
+            },
+            "tags": [
+                "graph-rag",
+                "knowledge-extraction",
+                "agent-extract"
+            ]
+        },
+        "graph-rag+object-extract": {
+            "class": {
+                "embeddings:{class}": {
+                    "request": "non-persistent://tg/request/embeddings:{class}",
+                    "response": "non-persistent://tg/response/embeddings:{class}"
+                },
+                "ge-query:{class}": {
+                    "request": "non-persistent://tg/request/graph-embeddings:{class}",
+                    "response": "non-persistent://tg/response/graph-embeddings:{class}"
+                },
+                "graph-rag:{class}": {
+                    "embeddings-request": "non-persistent://tg/request/embeddings:{class}",
+                    "embeddings-response": "non-persistent://tg/response/embeddings:{class}",
+                    "graph-embeddings-request": "non-persistent://tg/request/graph-embeddings:{class}",
+                    "graph-embeddings-response": "non-persistent://tg/response/graph-embeddings:{class}",
+                    "prompt-request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "request": "non-persistent://tg/request/graph-rag:{class}",
+                    "response": "non-persistent://tg/response/graph-rag:{class}",
+                    "triples-request": "non-persistent://tg/request/triples:{class}",
+                    "triples-response": "non-persistent://tg/response/triples:{class}"
+                },
+                "mcp-tool:{class}": {
+                    "request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "response": "non-persistent://tg/response/mcp-tool:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "metering-rag:{class}": {
+                    "input": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "metering:{class}": {
+                    "input": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "nlp-query:{class}": {
+                    "prompt-request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "request": "non-persistent://tg/request/nlp-query:{class}",
+                    "response": "non-persistent://tg/response/nlp-query:{class}"
+                },
+                "objects-query:{class}": {
+                    "request": "non-persistent://tg/request/objects:{class}",
+                    "response": "non-persistent://tg/response/objects:{class}"
+                },
+                "prompt-rag:{class}": {
+                    "request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion-rag:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "prompt:{class}": {
+                    "request": "non-persistent://tg/request/prompt:{class}",
+                    "response": "non-persistent://tg/response/prompt:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "structured-query:{class}": {
+                    "nlp-query-request": "non-persistent://tg/request/nlp-query:{class}",
+                    "nlp-query-response": "non-persistent://tg/response/nlp-query:{class}",
+                    "objects-query-request": "non-persistent://tg/request/objects:{class}",
+                    "objects-query-response": "non-persistent://tg/response/objects:{class}",
+                    "request": "non-persistent://tg/request/structured-query:{class}",
+                    "response": "non-persistent://tg/response/structured-query:{class}"
+                },
+                "text-completion-rag:{class}": {
+                    "request": "non-persistent://tg/request/text-completion-rag:{class}",
+                    "response": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "text-completion:{class}": {
+                    "request": "non-persistent://tg/request/text-completion:{class}",
+                    "response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "triples-query:{class}": {
+                    "request": "non-persistent://tg/request/triples:{class}",
+                    "response": "non-persistent://tg/response/triples:{class}"
+                }
+            },
+            "description": "GraphRAG + object extract",
+            "flow": {
+                "agent-manager:{id}": {
+                    "graph-rag-request": "non-persistent://tg/request/graph-rag:{class}",
+                    "graph-rag-response": "non-persistent://tg/response/graph-rag:{class}",
+                    "mcp-tool-request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "mcp-tool-response": "non-persistent://tg/response/mcp-tool:{class}",
+                    "next": "non-persistent://tg/request/agent:{id}",
+                    "prompt-request": "non-persistent://tg/request/prompt:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt:{class}",
+                    "request": "non-persistent://tg/request/agent:{id}",
+                    "response": "non-persistent://tg/response/agent:{id}",
+                    "structured-query-request": "non-persistent://tg/request/structured-query:{class}",
+                    "structured-query-response": "non-persistent://tg/response/structured-query:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "chunker:{id}": {
+                    "input": "persistent://tg/flow/text-document-load:{id}",
+                    "output": "persistent://tg/flow/chunk-load:{id}"
+                },
+                "ge-write:{id}": {
+                    "input": "persistent://tg/flow/graph-embeddings-store:{id}"
+                },
+                "graph-embeddings:{id}": {
+                    "embeddings-request": "non-persistent://tg/request/embeddings:{class}",
+                    "embeddings-response": "non-persistent://tg/response/embeddings:{class}",
+                    "input": "persistent://tg/flow/entity-contexts-load:{id}",
+                    "output": "persistent://tg/flow/graph-embeddings-store:{id}"
+                },
+                "kg-extract-objects:{id}": {
+                    "entity-contexts": "persistent://tg/flow/entity-contexts-load:{id}",
+                    "input": "persistent://tg/flow/chunk-load:{id}",
+                    "output": "persistent://tg/flow/objects-store:{id}",
+                    "prompt-request": "non-persistent://tg/request/prompt:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt:{class}"
+                },
+                "objects-write:{id}": {
+                    "input": "persistent://tg/flow/objects-store:{id}"
+                },
+                "pdf-decoder:{id}": {
+                    "input": "persistent://tg/flow/document-load:{id}",
+                    "output": "persistent://tg/flow/text-document-load:{id}"
+                },
+                "triples-write:{id}": {
+                    "input": "persistent://tg/flow/triples-store:{id}"
+                }
+            },
+            "interfaces": {
+                "agent": {
+                    "request": "non-persistent://tg/request/agent:{id}",
+                    "response": "non-persistent://tg/response/agent:{id}"
+                },
+                "document-load": "persistent://tg/flow/document-load:{id}",
+                "embeddings": {
+                    "request": "non-persistent://tg/request/embeddings:{class}",
+                    "response": "non-persistent://tg/response/embeddings:{class}"
+                },
+                "entity-contexts-load": "persistent://tg/flow/entity-contexts-load:{id}",
+                "graph-embeddings": {
+                    "request": "non-persistent://tg/request/graph-embeddings:{class}",
+                    "response": "non-persistent://tg/response/graph-embeddings:{class}"
+                },
+                "graph-embeddings-store": "persistent://tg/flow/graph-embeddings-store:{id}",
+                "graph-rag": {
+                    "request": "non-persistent://tg/request/graph-rag:{class}",
+                    "response": "non-persistent://tg/response/graph-rag:{class}"
+                },
+                "mcp-tool": {
+                    "request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "response": "non-persistent://tg/response/mcp-tool:{class}"
+                },
+                "nlp-query": {
+                    "request": "non-persistent://tg/request/nlp-query:{class}",
+                    "response": "non-persistent://tg/response/nlp-query:{class}"
+                },
+                "objects": {
+                    "request": "non-persistent://tg/request/objects:{class}",
+                    "response": "non-persistent://tg/response/objects:{class}"
+                },
+                "objects-store": "persistent://tg/flow/objects-store:{id}",
+                "prompt": {
+                    "request": "non-persistent://tg/request/prompt:{class}",
+                    "response": "non-persistent://tg/response/prompt:{class}"
+                },
+                "structured-query": {
+                    "request": "non-persistent://tg/request/structured-query:{class}",
+                    "response": "non-persistent://tg/response/structured-query:{class}"
+                },
+                "text-completion": {
+                    "request": "non-persistent://tg/request/text-completion:{class}",
+                    "response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "text-load": "persistent://tg/flow/text-document-load:{id}",
+                "triples": {
+                    "request": "non-persistent://tg/request/triples:{class}",
+                    "response": "non-persistent://tg/response/triples:{class}"
+                },
+                "triples-store": "persistent://tg/flow/triples-store:{id}"
+            },
+            "tags": [
+                "graph-rag",
+                "knowledge-extraction",
+                "object-extract"
+            ]
+        },
+        "object-extraction": {
+            "class": {
+                "embeddings:{class}": {
+                    "request": "non-persistent://tg/request/embeddings:{class}",
+                    "response": "non-persistent://tg/response/embeddings:{class}"
+                },
+                "mcp-tool:{class}": {
+                    "request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "response": "non-persistent://tg/response/mcp-tool:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "metering-rag:{class}": {
+                    "input": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "metering:{class}": {
+                    "input": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "nlp-query:{class}": {
+                    "prompt-request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "request": "non-persistent://tg/request/nlp-query:{class}",
+                    "response": "non-persistent://tg/response/nlp-query:{class}"
+                },
+                "objects-query:{class}": {
+                    "request": "non-persistent://tg/request/objects:{class}",
+                    "response": "non-persistent://tg/response/objects:{class}"
+                },
+                "prompt-rag:{class}": {
+                    "request": "non-persistent://tg/request/prompt-rag:{class}",
+                    "response": "non-persistent://tg/response/prompt-rag:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion-rag:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "prompt:{class}": {
+                    "request": "non-persistent://tg/request/prompt:{class}",
+                    "response": "non-persistent://tg/response/prompt:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "structured-query:{class}": {
+                    "nlp-query-request": "non-persistent://tg/request/nlp-query:{class}",
+                    "nlp-query-response": "non-persistent://tg/response/nlp-query:{class}",
+                    "objects-query-request": "non-persistent://tg/request/objects:{class}",
+                    "objects-query-response": "non-persistent://tg/response/objects:{class}",
+                    "request": "non-persistent://tg/request/structured-query:{class}",
+                    "response": "non-persistent://tg/response/structured-query:{class}"
+                },
+                "text-completion-rag:{class}": {
+                    "request": "non-persistent://tg/request/text-completion-rag:{class}",
+                    "response": "non-persistent://tg/response/text-completion-rag:{class}"
+                },
+                "text-completion:{class}": {
+                    "request": "non-persistent://tg/request/text-completion:{class}",
+                    "response": "non-persistent://tg/response/text-completion:{class}"
+                }
+            },
+            "description": "Object extraction only",
+            "flow": {
+                "agent-manager:{id}": {
+                    "graph-rag-request": "non-persistent://tg/request/graph-rag:{class}",
+                    "graph-rag-response": "non-persistent://tg/response/graph-rag:{class}",
+                    "mcp-tool-request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "mcp-tool-response": "non-persistent://tg/response/mcp-tool:{class}",
+                    "next": "non-persistent://tg/request/agent:{id}",
+                    "prompt-request": "non-persistent://tg/request/prompt:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt:{class}",
+                    "request": "non-persistent://tg/request/agent:{id}",
+                    "response": "non-persistent://tg/response/agent:{id}",
+                    "structured-query-request": "non-persistent://tg/request/structured-query:{class}",
+                    "structured-query-response": "non-persistent://tg/response/structured-query:{class}",
+                    "text-completion-request": "non-persistent://tg/request/text-completion:{class}",
+                    "text-completion-response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "chunker:{id}": {
+                    "input": "persistent://tg/flow/text-document-load:{id}",
+                    "output": "persistent://tg/flow/chunk-load:{id}"
+                },
+                "kg-extract-objects:{id}": {
+                    "entity-contexts": "persistent://tg/flow/entity-contexts-load:{id}",
+                    "input": "persistent://tg/flow/chunk-load:{id}",
+                    "output": "persistent://tg/flow/objects-store:{id}",
+                    "prompt-request": "non-persistent://tg/request/prompt:{class}",
+                    "prompt-response": "non-persistent://tg/response/prompt:{class}"
+                },
+                "objects-write:{id}": {
+                    "input": "persistent://tg/flow/objects-store:{id}"
+                },
+                "pdf-decoder:{id}": {
+                    "input": "persistent://tg/flow/document-load:{id}",
+                    "output": "persistent://tg/flow/text-document-load:{id}"
+                }
+            },
+            "interfaces": {
+                "agent": {
+                    "request": "non-persistent://tg/request/agent:{id}",
+                    "response": "non-persistent://tg/response/agent:{id}"
+                },
+                "document-load": "persistent://tg/flow/document-load:{id}",
+                "embeddings": {
+                    "request": "non-persistent://tg/request/embeddings:{class}",
+                    "response": "non-persistent://tg/response/embeddings:{class}"
+                },
+                "mcp-tool": {
+                    "request": "non-persistent://tg/request/mcp-tool:{class}",
+                    "response": "non-persistent://tg/response/mcp-tool:{class}"
+                },
+                "nlp-query": {
+                    "request": "non-persistent://tg/request/nlp-query:{class}",
+                    "response": "non-persistent://tg/response/nlp-query:{class}"
+                },
+                "objects": {
+                    "request": "non-persistent://tg/request/objects:{class}",
+                    "response": "non-persistent://tg/response/objects:{class}"
+                },
+                "objects-store": "persistent://tg/flow/objects-store:{id}",
+                "prompt": {
+                    "request": "non-persistent://tg/request/prompt:{class}",
+                    "response": "non-persistent://tg/response/prompt:{class}"
+                },
+                "structured-query": {
+                    "request": "non-persistent://tg/request/structured-query:{class}",
+                    "response": "non-persistent://tg/response/structured-query:{class}"
+                },
+                "text-completion": {
+                    "request": "non-persistent://tg/request/text-completion:{class}",
+                    "response": "non-persistent://tg/response/text-completion:{class}"
+                },
+                "text-load": "persistent://tg/flow/text-document-load:{id}"
+            },
+            "tags": [
+                "knowledge-extraction",
+                "object-extraction"
+            ]
+        }
+    },
+    "flows": {
+        "default": {
+            "class-name": "document-rag+graph-rag",
+            "description": "Default processing flow",
+            "interfaces": {
+                "agent": {
+                    "request": "non-persistent://tg/request/agent:default",
+                    "response": "non-persistent://tg/response/agent:default"
+                },
+                "document-embeddings": {
+                    "request": "non-persistent://tg/request/document-embeddings:document-rag+graph-rag",
+                    "response": "non-persistent://tg/response/document-embeddings:document-rag+graph-rag"
+                },
+                "document-embeddings-store": "persistent://tg/flow/document-embeddings-store:default",
+                "document-load": "persistent://tg/flow/document-load:default",
+                "document-rag": {
+                    "request": "non-persistent://tg/request/document-rag:document-rag+graph-rag",
+                    "response": "non-persistent://tg/response/document-rag:document-rag+graph-rag"
+                },
+                "embeddings": {
+                    "request": "non-persistent://tg/request/embeddings:document-rag+graph-rag",
+                    "response": "non-persistent://tg/response/embeddings:document-rag+graph-rag"
+                },
+                "entity-contexts-load": "persistent://tg/flow/entity-contexts-load:default",
+                "graph-embeddings": {
+                    "request": "non-persistent://tg/request/graph-embeddings:document-rag+graph-rag",
+                    "response": "non-persistent://tg/response/graph-embeddings:document-rag+graph-rag"
+                },
+                "graph-embeddings-store": "persistent://tg/flow/graph-embeddings-store:default",
+                "graph-rag": {
+                    "request": "non-persistent://tg/request/graph-rag:document-rag+graph-rag",
+                    "response": "non-persistent://tg/response/graph-rag:document-rag+graph-rag"
+                },
+                "mcp-tool": {
+                    "request": "non-persistent://tg/request/mcp-tool:document-rag+graph-rag",
+                    "response": "non-persistent://tg/response/mcp-tool:document-rag+graph-rag"
+                },
+                "prompt": {
+                    "request": "non-persistent://tg/request/prompt:document-rag+graph-rag",
+                    "response": "non-persistent://tg/response/prompt:document-rag+graph-rag"
+                },
+                "text-completion": {
+                    "request": "non-persistent://tg/request/text-completion:document-rag+graph-rag",
+                    "response": "non-persistent://tg/response/text-completion:document-rag+graph-rag"
+                },
+                "text-load": "persistent://tg/flow/text-document-load:default",
+                "triples": {
+                    "request": "non-persistent://tg/request/triples:document-rag+graph-rag",
+                    "response": "non-persistent://tg/response/triples:document-rag+graph-rag"
+                },
+                "triples-store": "persistent://tg/flow/triples-store:default"
+            }
+        }
+    },
+    "flows-active": {
+        "agent-manager": {
+            "default": {
+                "graph-rag-request": "non-persistent://tg/request/graph-rag:document-rag+graph-rag",
+                "graph-rag-response": "non-persistent://tg/response/graph-rag:document-rag+graph-rag",
+                "mcp-tool-request": "non-persistent://tg/request/mcp-tool:document-rag+graph-rag",
+                "mcp-tool-response": "non-persistent://tg/response/mcp-tool:document-rag+graph-rag",
+                "next": "non-persistent://tg/request/agent:default",
+                "prompt-request": "non-persistent://tg/request/prompt:document-rag+graph-rag",
+                "prompt-response": "non-persistent://tg/response/prompt:document-rag+graph-rag",
+                "request": "non-persistent://tg/request/agent:default",
+                "response": "non-persistent://tg/response/agent:default",
+                "structured-query-request": "non-persistent://tg/request/structured-query:document-rag+graph-rag",
+                "structured-query-response": "non-persistent://tg/response/structured-query:document-rag+graph-rag",
+                "text-completion-request": "non-persistent://tg/request/text-completion:document-rag+graph-rag",
+                "text-completion-response": "non-persistent://tg/response/text-completion:document-rag+graph-rag"
+            }
+        },
+        "chunker": {
+            "default": {
+                "input": "persistent://tg/flow/text-document-load:default",
+                "output": "persistent://tg/flow/chunk-load:default"
+            }
+        },
+        "de-query": {
+            "document-rag+graph-rag": {
+                "request": "non-persistent://tg/request/document-embeddings:document-rag+graph-rag",
+                "response": "non-persistent://tg/response/document-embeddings:document-rag+graph-rag"
+            }
+        },
+        "de-write": {
+            "default": {
+                "input": "persistent://tg/flow/document-embeddings-store:default"
+            }
+        },
+        "document-embeddings": {
+            "default": {
+                "embeddings-request": "non-persistent://tg/request/embeddings:document-rag+graph-rag",
+                "embeddings-response": "non-persistent://tg/response/embeddings:document-rag+graph-rag",
+                "input": "persistent://tg/flow/chunk-load:default",
+                "output": "persistent://tg/flow/document-embeddings-store:default"
+            }
+        },
+        "document-rag": {
+            "document-rag+graph-rag": {
+                "document-embeddings-request": "non-persistent://tg/request/document-embeddings:document-rag+graph-rag",
+                "document-embeddings-response": "non-persistent://tg/response/document-embeddings:document-rag+graph-rag",
+                "embeddings-request": "non-persistent://tg/request/embeddings:document-rag+graph-rag",
+                "embeddings-response": "non-persistent://tg/response/embeddings:document-rag+graph-rag",
+                "prompt-request": "non-persistent://tg/request/prompt-rag:document-rag+graph-rag",
+                "prompt-response": "non-persistent://tg/response/prompt-rag:document-rag+graph-rag",
+                "request": "non-persistent://tg/request/document-rag:document-rag+graph-rag",
+                "response": "non-persistent://tg/response/document-rag:document-rag+graph-rag"
+            }
+        },
+        "embeddings": {
+            "document-rag+graph-rag": {
+                "request": "non-persistent://tg/request/embeddings:document-rag+graph-rag",
+                "response": "non-persistent://tg/response/embeddings:document-rag+graph-rag"
+            }
+        },
+        "ge-query": {
+            "document-rag+graph-rag": {
+                "request": "non-persistent://tg/request/graph-embeddings:document-rag+graph-rag",
+                "response": "non-persistent://tg/response/graph-embeddings:document-rag+graph-rag"
+            }
+        },
+        "ge-write": {
+            "default": {
+                "input": "persistent://tg/flow/graph-embeddings-store:default"
+            }
+        },
+        "graph-embeddings": {
+            "default": {
+                "embeddings-request": "non-persistent://tg/request/embeddings:document-rag+graph-rag",
+                "embeddings-response": "non-persistent://tg/response/embeddings:document-rag+graph-rag",
+                "input": "persistent://tg/flow/entity-contexts-load:default",
+                "output": "persistent://tg/flow/graph-embeddings-store:default"
+            }
+        },
+        "graph-rag": {
+            "document-rag+graph-rag": {
+                "embeddings-request": "non-persistent://tg/request/embeddings:document-rag+graph-rag",
+                "embeddings-response": "non-persistent://tg/response/embeddings:document-rag+graph-rag",
+                "graph-embeddings-request": "non-persistent://tg/request/graph-embeddings:document-rag+graph-rag",
+                "graph-embeddings-response": "non-persistent://tg/response/graph-embeddings:document-rag+graph-rag",
+                "prompt-request": "non-persistent://tg/request/prompt-rag:document-rag+graph-rag",
+                "prompt-response": "non-persistent://tg/response/prompt-rag:document-rag+graph-rag",
+                "request": "non-persistent://tg/request/graph-rag:document-rag+graph-rag",
+                "response": "non-persistent://tg/response/graph-rag:document-rag+graph-rag",
+                "triples-request": "non-persistent://tg/request/triples:document-rag+graph-rag",
+                "triples-response": "non-persistent://tg/response/triples:document-rag+graph-rag"
+            }
+        },
+        "kg-extract-definitions": {
+            "default": {
+                "entity-contexts": "persistent://tg/flow/entity-contexts-load:default",
+                "input": "persistent://tg/flow/chunk-load:default",
+                "prompt-request": "non-persistent://tg/request/prompt:document-rag+graph-rag",
+                "prompt-response": "non-persistent://tg/response/prompt:document-rag+graph-rag",
+                "triples": "persistent://tg/flow/triples-store:default"
+            }
+        },
+        "kg-extract-relationships": {
+            "default": {
+                "input": "persistent://tg/flow/chunk-load:default",
+                "prompt-request": "non-persistent://tg/request/prompt:document-rag+graph-rag",
+                "prompt-response": "non-persistent://tg/response/prompt:document-rag+graph-rag",
+                "triples": "persistent://tg/flow/triples-store:default"
+            }
+        },
+        "mcp-tool": {
+            "document-rag+graph-rag": {
+                "request": "non-persistent://tg/request/mcp-tool:document-rag+graph-rag",
+                "response": "non-persistent://tg/response/mcp-tool:document-rag+graph-rag",
+                "text-completion-request": "non-persistent://tg/request/text-completion:document-rag+graph-rag",
+                "text-completion-response": "non-persistent://tg/response/text-completion:document-rag+graph-rag"
+            }
+        },
+        "metering": {
+            "document-rag+graph-rag": {
+                "input": "non-persistent://tg/response/text-completion:document-rag+graph-rag"
+            }
+        },
+        "metering-rag": {
+            "document-rag+graph-rag": {
+                "input": "non-persistent://tg/response/text-completion-rag:document-rag+graph-rag"
+            }
+        },
+        "pdf-decoder": {
+            "default": {
+                "input": "persistent://tg/flow/document-load:default",
+                "output": "persistent://tg/flow/text-document-load:default"
+            }
+        },
+        "prompt": {
+            "document-rag+graph-rag": {
+                "request": "non-persistent://tg/request/prompt:document-rag+graph-rag",
+                "response": "non-persistent://tg/response/prompt:document-rag+graph-rag",
+                "text-completion-request": "non-persistent://tg/request/text-completion:document-rag+graph-rag",
+                "text-completion-response": "non-persistent://tg/response/text-completion:document-rag+graph-rag"
+            }
+        },
+        "prompt-rag": {
+            "document-rag+graph-rag": {
+                "request": "non-persistent://tg/request/prompt-rag:document-rag+graph-rag",
+                "response": "non-persistent://tg/response/prompt-rag:document-rag+graph-rag",
+                "text-completion-request": "non-persistent://tg/request/text-completion-rag:document-rag+graph-rag",
+                "text-completion-response": "non-persistent://tg/response/text-completion-rag:document-rag+graph-rag"
+            }
+        },
+        "text-completion": {
+            "document-rag+graph-rag": {
+                "request": "non-persistent://tg/request/text-completion:document-rag+graph-rag",
+                "response": "non-persistent://tg/response/text-completion:document-rag+graph-rag"
+            }
+        },
+        "text-completion-rag": {
+            "document-rag+graph-rag": {
+                "request": "non-persistent://tg/request/text-completion-rag:document-rag+graph-rag",
+                "response": "non-persistent://tg/response/text-completion-rag:document-rag+graph-rag"
+            }
+        },
+        "triples-query": {
+            "document-rag+graph-rag": {
+                "request": "non-persistent://tg/request/triples:document-rag+graph-rag",
+                "response": "non-persistent://tg/response/triples:document-rag+graph-rag"
+            }
+        },
+        "triples-write": {
+            "default": {
+                "input": "persistent://tg/flow/triples-store:default"
+            }
+        }
+    },
+    "interface-descriptions": {
+        "agent": {
+            "description": "Agent service",
+            "kind": "request-response"
+        },
+        "document-embeddings": {
+            "description": "Document embeddings service",
+            "kind": "request-response"
+        },
+        "document-embeddings-store": {
+            "description": "Document embeddings loader",
+            "kind": "send"
+        },
+        "document-load": {
+            "description": "Document loader",
+            "kind": "send",
+            "visible": true
+        },
+        "document-rag": {
+            "description": "ChunkRAG service",
+            "kind": "request-response"
+        },
+        "entity-contexts-load": {
+            "description": "Entity contexts loader",
+            "kind": "send"
+        },
+        "graph-embeddings": {
+            "description": "Graph embeddings service",
+            "kind": "request-response"
+        },
+        "graph-embeddings-store": {
+            "description": "Graph embeddings loader",
+            "kind": "send"
+        },
+        "graph-rag": {
+            "description": "GraphRAG service",
+            "kind": "request-response"
+        },
+        "nlp-query": {
+            "description": "NLP question to GraphQL service",
+            "kind": "request-response"
+        },
+        "objects": {
+            "description": "Object query service",
+            "kind": "request-response"
+        },
+        "objects-store": {
+            "description": "Object store",
+            "kind": "request-response"
+        },
+        "prompt": {
+            "description": "Prompt service",
+            "kind": "request-response"
+        },
+        "structured-query": {
+            "description": "Structured query service",
+            "kind": "request-response"
+        },
+        "text-completion": {
+            "description": "Text completion service",
+            "kind": "request-response"
+        },
+        "text-load": {
+            "description": "Text document loader",
+            "kind": "send",
+            "visible": true
+        },
+        "triples": {
+            "description": "Triples query service",
+            "kind": "request-response"
+        },
+        "triples-store": {
+            "description": "Triples loader",
+            "kind": "send"
+        }
+    },
+    "mcp": {
+        "duckduckgo": {
+            "remote-name": "search",
+            "url": "http://ddg-mcp-server:9870/mcp"
+        }
+    },
+    "prompt": {
+        "system": "You are a helpful assistant.",
+        "template-index": [
+            "agent-kg-extract",
+            "agent-react",
+            "diagnose-structured-data",
+            "document-prompt",
+            "extract-definitions",
+            "extract-relationships",
+            "extract-rows",
+            "extract-topics",
+            "graphql-generation",
+            "kg-prompt",
+            "question",
+            "schema-selection"
+        ],
+        "template.agent-kg-extract": {
+            "prompt": "Analyze the following text and extract both entity definitions and relationships. Return the results as JSON with 'definitions' and 'relationships' arrays.\n\nFor definitions, extract entities and their explanations or descriptions.\nFor relationships, extract subject-predicate-object triples where subjects and objects are entities, and predicates are relationship types.\n\nText: {{text}}\n\nReturn JSON only, no other text. Use this exact format:\n{\n  \"definitions\": [\n    {\n      \"entity\": \"entity_name\",\n      \"definition\": \"definition_text\"\n    }\n  ],\n  \"relationships\": [\n    {\n      \"subject\": \"subject_entity\",\n      \"predicate\": \"relationship_type\",\n      \"object\": \"object_entity_or_literal\",\n      \"object-entity\": true\n    }\n  ]\n}\n",
+            "response-type": "json",
+            "schema": {
+                "properties": {
+                    "definitions": {
+                        "items": {
+                            "properties": {
+                                "definition": {
+                                    "type": "string"
+                                },
+                                "entity": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "entity",
+                                "definition"
+                            ],
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "relationships": {
+                        "items": {
+                            "properties": {
+                                "object": {
+                                    "type": "string"
+                                },
+                                "object-entity": {
+                                    "type": "boolean"
+                                },
+                                "predicate": {
+                                    "type": "string"
+                                },
+                                "subject": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "subject",
+                                "predicate",
+                                "object"
+                            ],
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "definitions",
+                    "relationships"
+                ],
+                "type": "object"
+            }
+        },
+        "template.agent-react": {
+            "prompt": "# ReAct Agent System Prompt\n\nYou are an AI assistant that uses the ReAct (Reasoning + Acting) framework to solve problems through systematic reasoning and tool use.\n\n## Core Instructions\n\nFor each user query, work through the problem step-by-step using this cycle:\n1. **Thought**: Reason about the current situation and determine what you need to do next\n2. **Action**: Take ONE specific action using an available tool\n3. Wait for **Observation**: The system will provide the result of your action\n4. Continue with the next **Thought** based on the observation\n\n**CRITICAL**: Generate exactly ONE Thought followed by ONE Action, then STOP. Do not generate multiple Thought/Action pairs in a single response. Do not generate Observations yourself - the system will provide them.\n\n## Response Format\n\nUse this exact format for each step:\n\n```\nThought: [Your reasoning about what to do next - be specific about why this action is needed]\nAction: [tool_name]\nArgs: {\n  \"parameter_name\": \"value\",\n  \"another_parameter\": 123,\n  \"list_parameter\": [\"item1\", \"item2\"]\n}\n```\n\nWhen you have finished provide the final answer:\n\n```\nThought: [Your reasoning about why the process is complete]\nFinal Answer: [The final answer]\n```\n\nWhen providing a final answer, do not provide an Action or Args.\n\n## Action Format Rules\n\n1. **Tool Name**: Write \"Action: \" followed by the exact tool name on its own line\n2. **Arguments**: Write \"Args: \" followed by a valid JSON object containing all parameters\n3. **JSON Requirements**:\n   - Use double quotes for all string keys and values\n   - Numbers don't need quotes: `\"count\": 5`\n   - Booleans: `\"enabled\": true` or `\"enabled\": false`\n   - Arrays: `\"items\": [\"a\", \"b\", \"c\"]`\n   - Nested objects: `\"config\": {\"setting\": \"value\"}`\n   - Null values: `\"optional_field\": null`\n4. **Required Parameters**: Include all required parameters for the tool\n5. **No Extra Text**: Don't add explanations or comments within the Action block\n1. **Final answer**: Write \"Final Answer: \" followed by the final answer\n\n## Available Tools\n\n{% for tool in tools %}- **{{ tool.name }}**: {{ tool.description }}\n{% for arg in tool.arguments %}  - Required: `\"{{ arg.name }}\"` ({{ arg.type }}): {{ arg.description }}\n{% endfor %}\n{% endfor %}\n\n## Behavior Rules\n\n1. **One Step at a Time**: Generate exactly one Thought and one Action, then wait for the system to provide an Observation\n2. **Be Specific**: Your Thought should clearly explain why you're taking the specific action\n3. **Use Context**: Build on previous Observations to inform your next steps\n4. **Error Handling**: If an action fails, reason about the error and try a different approach\n5. **Completion**: When you have enough information to fully answer the user's query, generate a final Thought explaining your conclusion, but do not take further actions\n\n## Error Responses\n\nIf an action fails, you'll see:\n```\nObservation: Error: [specific error message]\n```\n\nWhen this happens:\n- Generate a Thought analyzing what went wrong\n- Take a corrective Action with different parameters or a different tool\n- If a tool is completely unavailable, explain this limitation in your next Thought\n\n## Termination\n\nThe conversation ends when:\n- You determine you have sufficient information to answer the user's query completely and provide a final answer.\n- You encounter an unrecoverable error that prevents task completion\n- The system reaches the maximum iteration limit\n\n## Important Notes\n\n- **Never generate Observations yourself** - only the system provides these\n- **Always validate your JSON** - malformed JSON will cause action failures  \n- **Stay focused** - each Thought should directly relate to solving the user's query\n- **Be efficient** - choose actions that gather the most relevant information for the task\n\n# Proceed\n\nQuestion: {{question}}\n    \n{% for h in history %}\nAction: \"{{h.action}}\"\nArgs: {\n{% for k, v in h.arguments.items() %}  \"{{k}}\": \"{{v}}\"\n{% endfor %}}\nObservation: \"{{h.observation}}\"\n{% endfor %}\n",
+            "response-type": "text"
+        },
+        "template.diagnose-structured-data": {
+            "prompt": "\nYou are an expert data engineer specializing in creating Structured Data Descriptor configurations for data import pipelines, with particular expertise in XML processing and XPath expressions. Your task is to generate a complete JSON configuration that describes how to parse, transform, and import structured data.\n\n## Your Role\nGenerate a comprehensive Structured Data Descriptor configuration based on the user's requirements. The descriptor should be production-ready, include appropriate error handling, and follow best practices for data quality and transformation.\n\n## XML Processing Expertise\n\nWhen working with XML data, you must:\n\n1. **Analyze XML Structure** - Examine the hierarchy, namespaces, and element patterns\n2. **Generate Proper XPath Expressions** - Create efficient XPath selectors for record extraction\n3. **Handle Complex XML Patterns** - Support various XML formats including:\n   - Standard element structures: `<customer><name>John</name></customer>`\n   - Attribute-based fields: `<field name=\"country\">USA</field>`\n   - Mixed content and nested hierarchies\n   - Namespaced XML documents\n\n## XPath Expression Guidelines\n\nFor XML format configurations, use these XPath patterns:\n\n**Record Path Examples:**\n- Simple records: `//record` or `//customer`\n- Nested records: `//data/records/record` or `//customers/customer`\n- Absolute paths: `/ROOT/data/record` (will be converted to relative paths automatically)\n- With namespaces: `//ns:record` or `//soap:Body/data/record`\n\n**Field Attribute Patterns:**\n- When fields use name attributes: set `field_attribute: \"name\"` for `<field name=\"key\">value</field>`\n- For other attribute patterns: set appropriate attribute name\n\n**CRITICAL: Source Field Names in Mappings**\n\nWhen using `field_attribute`, the XML parser extracts field names from the attribute values and creates a flat dictionary. Your source field names in mappings must match these extracted names:\n\n**CORRECT Example:**\n```xml\n<field name=\"Country or Area\">Albania</field>\n<field name=\"Trade (USD)\">1000.50</field>\n```\n\nBecomes parsed data:\n```json\n{\n  \"Country or Area\": \"Albania\",\n  \"Trade (USD)\": \"1000.50\"\n}\n```\n\nSo your mappings should use:\n```json\n{\n  \"source_field\": \"Country or Area\",     // \u2705 Correct - matches parsed field name\n  \"source_field\": \"Trade (USD)\"         // \u2705 Correct - matches parsed field name\n}\n```\n\n**INCORRECT Example:**\n```json\n{\n  \"source_field\": \"Field[@name='Country or Area']\",  // \u274c Wrong - XPath not needed here\n  \"source_field\": \"field[@name='Trade (USD)']\"       // \u274c Wrong - XPath not needed here\n}\n```\n\n**XML Format Configuration Template:**\n```json\n{\n  \"format\": {\n    \"type\": \"xml\",\n    \"encoding\": \"utf-8\",\n    \"options\": {\n      \"record_path\": \"//data/record\",        // XPath to find record elements\n      \"field_attribute\": \"name\"              // For <field name=\"key\">value</field> pattern\n    }\n  }\n}\n```\n\n**Alternative XML Options:**\n```json\n{\n  \"format\": {\n    \"type\": \"xml\", \n    \"encoding\": \"utf-8\",\n    \"options\": {\n      \"record_path\": \"//customer\",           // Direct element-based records\n      // No field_attribute needed for standard XML\n    }\n  }\n}\n```\n\n## Required Information to Gather\n\nBefore generating the descriptor, ask the user for these details if not provided:\n\n1. **Source Data Format**\n   - File type (CSV, JSON, XML, Excel, fixed-width, etc.)\n   - **For XML**: Sample structure, namespace prefixes, record element patterns\n   - Sample data or field descriptions\n   - Any format-specific details (delimiters, encoding, namespaces, etc.)\n\n2. **Target Schema**\n   - What fields should be in the final output?\n   - What data types are expected?\n   - Any required vs optional fields?\n\n3. **Data Transformations Needed**\n   - Field mappings (source field \u2192 target field)\n   - Data cleaning requirements (trim spaces, normalize case, etc.)\n   - Type conversions needed\n   - Any calculations or derived fields\n   - Lookup tables or reference data needed\n\n4. **Data Quality Requirements**\n   - Validation rules (format patterns, ranges, required fields)\n   - How to handle missing or invalid data\n   - Duplicate handling strategy\n\n5. **Processing Requirements**\n   - Any filtering needed (skip certain records)\n   - Sorting requirements\n   - Aggregation or grouping needs\n   - Error handling preferences\n\n## XML Structure Analysis\n\nWhen presented with XML data, analyze:\n\n1. **Document Root**: What is the root element?\n2. **Record Container**: Where are individual records located?\n3. **Field Pattern**: How are field names and values structured?\n   - Direct child elements: `<name>John</name>`\n   - Attribute-based: `<field name=\"name\">John</field>`\n   - Mixed patterns\n4. **Namespaces**: Are there any namespace prefixes?\n5. **Hierarchy Depth**: How deeply nested are the records?\n\n## Configuration Template Structure\n\nGenerate a JSON configuration following this structure:\n\n```json\n{\n  \"version\": \"1.0\",\n  \"metadata\": {\n    \"name\": \"[Descriptive name]\",\n    \"description\": \"[What this config does]\",\n    \"author\": \"[Author or team]\",\n    \"created\": \"[ISO date]\"\n  },\n  \"format\": {\n    \"type\": \"[csv|json|xml|fixed-width|excel]\",\n    \"encoding\": \"utf-8\",\n    \"options\": {\n      // Format-specific parsing options\n      // For XML: record_path (XPath), field_attribute (if applicable)\n    }\n  },\n  \"globals\": {\n    \"variables\": {\n      // Global variables and constants\n    },\n    \"lookup_tables\": {\n      // Reference data for transformations\n    }\n  },\n  \"preprocessing\": [\n    // Global filters and operations before field mapping\n  ],\n  \"mappings\": [\n    // Field mapping definitions with transforms and validation\n  ],\n  \"postprocessing\": [\n    // Global operations after field mapping\n  ],\n  \"output\": {\n    \"format\": \"trustgraph-objects\",\n    \"schema_name\": \"[target schema name]\",\n    \"options\": {\n      \"confidence\": 0.85,\n      \"batch_size\": 1000\n    },\n    \"error_handling\": {\n      \"on_validation_error\": \"log_and_skip\",\n      \"on_transform_error\": \"log_and_skip\",\n      \"max_errors\": 100\n    }\n  }\n}\n```\n\n## Transform Types Available\n\nUse these transform types in your mappings:\n\n**String Operations:**\n- `trim`, `upper`, `lower`, `title_case`\n- `replace`, `regex_replace`, `substring`, `pad_left`\n\n**Type Conversions:**\n- `to_string`, `to_int`, `to_float`, `to_bool`, `to_date`\n\n**Data Operations:**\n- `default`, `lookup`, `concat`, `calculate`, `conditional`\n\n**Validation Types:**\n- `required`, `not_null`, `min_length`, `max_length`\n- `range`, `pattern`, `in_list`, `custom`\n\n## XML-Specific Best Practices\n\n1. **Use efficient XPath expressions** - Prefer specific paths over broad searches\n2. **Handle namespace prefixes** when present\n3. **Identify field attribute patterns** correctly\n4. **Test XPath expressions** mentally against the provided structure\n5. **Consider XML element vs attribute data** in field mappings\n6. **Account for mixed content** and nested structures\n\n## Best Practices to Follow\n\n1. **Always include error handling** with appropriate policies\n2. **Use meaningful field names** that match target schema\n3. **Add validation** for critical fields\n4. **Include default values** for optional fields\n5. **Use lookup tables** for code translations\n6. **Add preprocessing filters** to exclude invalid records\n7. **Include metadata** for documentation and maintenance\n8. **Consider performance** with appropriate batch sizes\n\n## Complete XML Example\n\nGiven this XML structure:\n```xml\n<ROOT>\n  <data>\n    <record>\n      <field name=\"Country\">USA</field>\n      <field name=\"Year\">2024</field>\n      <field name=\"Amount\">1000.50</field>\n    </record>\n  </data>\n</ROOT>\n```\n\nThe parser will:\n1. Use `record_path: \"/ROOT/data/record\"` to find record elements\n2. Use `field_attribute: \"name\"` to extract field names from the name attribute\n3. Create this parsed data structure: `{\"Country\": \"USA\", \"Year\": \"2024\", \"Amount\": \"1000.50\"}`\n\nGenerate this COMPLETE configuration:\n```json\n{\n  \"format\": {\n    \"type\": \"xml\",\n    \"encoding\": \"utf-8\", \n    \"options\": {\n      \"record_path\": \"/ROOT/data/record\",\n      \"field_attribute\": \"name\"\n    }\n  },\n  \"mappings\": [\n    {\n      \"source_field\": \"Country\",          // \u2705 Matches parsed field name\n      \"target_field\": \"country_name\"\n    },\n    {\n      \"source_field\": \"Year\",             // \u2705 Matches parsed field name  \n      \"target_field\": \"year\",\n      \"transforms\": [{\"type\": \"to_int\"}]\n    },\n    {\n      \"source_field\": \"Amount\",           // \u2705 Matches parsed field name\n      \"target_field\": \"amount\",\n      \"transforms\": [{\"type\": \"to_float\"}]\n    }\n  ]\n}\n```\n\n**KEY RULE: source_field names must match the extracted field names, NOT the XML element structure.**\n\n## Output Format\n\nProvide the configuration as ONLY a properly formatted JSON document.\n\n## Schema\n\nThe following schema describes the target result format:\n\n{% for schema in schemas %}\n**{{ schema.name }}**: {{ schema.description }}\nFields:\n{% for field in schema.fields %}\n- {{ field.name }} ({{ field.type }}){% if field.description %}: {{ field.description }}{% endif\n%}{% if field.primary_key %} [PRIMARY KEY]{% endif %}{% if field.required %} [REQUIRED]{% endif \n%}{% if field.indexed %} [INDEXED]{% endif %}{% if field.enum_values %} [OPTIONS: {{\nfield.enum_values|join(', ') }}]{% endif %}\n{% endfor %}\n\n{% endfor %}\n\n## Data sample\n\nAnalyze the XML structure and produce a Structured Data Descriptor by diagnosing the following data sample. Pay special attention to XML hierarchy, element patterns, and generate appropriate XPath expressions:\n\n{{sample}}\n",
+            "response-type": "json"
+        },
+        "template.document-prompt": {
+            "prompt": "Study the following context. Use only the information provided in the context in your response. Do not speculate if the answer is not found in the provided set of knowledge statements.\n\nHere is the context:\n{{documents}}\n\nUse only the provided knowledge statements to respond to the following:\n{{query}}\n",
+            "response-type": "text"
+        },
+        "template.extract-definitions": {
+            "prompt": "<instructions>\nStudy the following text and derive definitions for any discovered entities.\nDo not provide definitions for entities whose definitions are incomplete\nor unknown.\nOutput relationships in JSON format as an arary of objects with fields:\n- entity: the name of the entity\n- definition: English text which defines the entity\n</instructions>\n\n<text>\n{{text}}\n</text>\n\n<requirements>\nYou will respond only with raw JSON format data. Do not provide\nexplanations. Do not use special characters in the abstract text. The\nabstract will be written as plain text.  Do not add markdown formatting\nor headers or prefixes.  Do not include null or unknown definitions.\n</requirements>",
+            "response-type": "json",
+            "schema": {
+                "items": {
+                    "properties": {
+                        "definition": {
+                            "type": "string"
+                        },
+                        "entity": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "entity",
+                        "definition"
+                    ],
+                    "type": "object"
+                },
+                "type": "array"
+            }
+        },
+        "template.extract-relationships": {
+            "prompt": "<instructions>\nStudy the following text and derive entity relationships.  For each\nrelationship, derive the subject, predicate and object of the relationship.\nOutput relationships in JSON format as an arary of objects with fields:\n- subject: the subject of the relationship\n- predicate: the predicate\n- object: the object of the relationship\n- object-entity: false if the object is a simple data type: name, value or date.  true if it is an entity.\n</instructions>\n\n<text>\n{{text}}\n</text>\n\n<requirements>\nYou will respond only with raw JSON format data. Do not provide\nexplanations. Do not use special characters in the abstract text. The\nabstract must be written as plain text.  Do not add markdown formatting\nor headers or prefixes.\n</requirements>",
+            "response-type": "json",
+            "schema": {
+                "items": {
+                    "properties": {
+                        "object": {
+                            "type": "string"
+                        },
+                        "object-entity": {
+                            "type": "boolean"
+                        },
+                        "predicate": {
+                            "type": "string"
+                        },
+                        "subject": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "subject",
+                        "predicate",
+                        "object",
+                        "object-entity"
+                    ],
+                    "type": "object"
+                },
+                "type": "array"
+            }
+        },
+        "template.extract-rows": {
+            "prompt": "<instructions>\nStudy the following text and derive objects which match the schema provided.\n\nYou must output an array of JSON objects for each object you discover\nwhich matches the schema.  For each object, output a JSON object whose fields\ncarry the name field specified in the schema.\n</instructions>\n\n<schema>\n{{schema}}\n</schema>\n\n<text>\n{{text}}\n</text>\n\n<requirements>\nYou will respond only with raw JSON format data. Do not provide\nexplanations. Do not add markdown formatting or headers or prefixes.\n</requirements>",
+            "response-type": "json"
+        },
+        "template.extract-topics": {
+            "prompt": "You are a helpful assistant that performs information extraction tasks for a provided text.\nRead the provided text. You will identify topics and their definitions in JSON.\n\nReading Instructions:\n- Ignore document formatting in the provided text.\n- Study the provided text carefully.\n\nHere is the text:\n{{text}}\n\nResponse Instructions: \n- Do not respond with special characters.\n- Return only topics that are concepts and unique to the provided text.\n- Respond only with well-formed JSON.\n- The JSON response shall be an array of objects with keys \"topic\" and \"definition\". \n- The JSON response shall use the following structure:\n\n```json\n[{\"topic\": string, \"definition\": string}]\n```\n\n- Do not write any additional text or explanations.",
+            "response-type": "json",
+            "schema": {
+                "items": {
+                    "properties": {
+                        "definition": {
+                            "type": "string"
+                        },
+                        "topic": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "topic",
+                        "definition"
+                    ],
+                    "type": "object"
+                },
+                "type": "array"
+            }
+        },
+        "template.graphql-generation": {
+            "prompt": "You are a GraphQL query generation expert. Given a natural language question\nand provided database schemas, generate a valid GraphQL query embedded in\nvalid JSON schema.\n\n## Question:\n{{ question }}\n\n## Provided Schemas:\n{% for schema in schemas %}\n**{{ schema.name }}**: {{ schema.description }}\nFields:\n{% for field in schema.fields %}\n- {{ field.name }} ({{ field.type }}){% if field.description %}: {{ field.description }}{% endif\n%}{% if field.primary_key %} [PRIMARY KEY]{% endif %}{% if field.required %} [REQUIRED]{% endif \n%}{% if field.indexed %} [INDEXED]{% endif %}{% if field.enum_values %} [OPTIONS: {{\nfield.enum_values|join(', ') }}]{% endif %}\n{% endfor %}\n\n{% endfor %}\n\n## GraphQL Query Rules:\n1. Use the schema names as GraphQL query fields (e.g., `customers`, `orders`)\n2. Apply filters using the `where` parameter with nested filter objects\n3. Available filter operators per field type:\n   - String fields: `eq`, `contains`, `startsWith`, `endsWith`, `in`, `not`, `not_in`\n   - Integer/Float fields: `eq`, `gt`, `gte`, `lt`, `lte`, `in`, `not`, `not_in`\n4. Use `order_by` for sorting (field name as string)\n5. Use `direction` for sort direction: `ASC` or `DESC`\n6. Use `limit` to restrict number of results\n7. Select specific fields in the query body\n\n## Response Instructions:\n\n1. Analyze the question to identify:\n  - What data to retrieve (which fields to select)\n  - What filters to apply (where conditions)\n  - What sorting is needed (order_by, direction)\n  - How many results (limit)\n2. Generate a GraphQL query that:\n  - Uses only the provided schema names and field names\n  - Applies appropriate filters based on the question\n  - Selects relevant fields for the response\n  - Includes reasonable limits (default 100 if not specified)\n3. If variables are needed, include them in the response\n\n### Response Format:\n\nReturn a JSON object with:\n- \"query\": the GraphQL query string\n- \"variables\": object with any GraphQL variables (empty object if none)\n- \"confidence\": float between 0.0-1.0 indicating confidence in the query\n\n### Example Responses:\n\nExample:\n**Question**: \"Show me customers from California\"\n{\n  \"query\": \"query { customers(where: {state: {eq: \\\"California\\\"}}, limit: 100) { customer_id name email state} }\",\n  \"variables\": {},\n  \"confidence\": 0.92\n}\n\nExample:\n**Question**: \"Top 10 products by price\"\n{\n  \"query\": \"query { products(order_by: \\\"price\\\", direction: DESC, limit: 10) { product_id name price category } }\",\n  \"variables\": {},\n  \"confidence\": 0.88\n}\n\nExample:\n**Question**: \"Recent orders over $100\"\n{\n  \"query\": \"query { orders( where: { total_amount: {gt: 100}, order_date: {gte: \\\"2024-01-01\\\"} }, order_by: \\\"order_date\\\", direction: DESC, limit: 50) { order_id customer_id total_amount order_date status } }\",\n  \"variables\": {},\n  \"confidence\": 0.96\n}\n\n}\n\n",
+            "response-type": "json",
+            "schema": {
+                "additionalProperties": false,
+                "properties": {
+                    "confidence": {
+                        "description": "Float between 0.0-1.0 indicating confidence in the generated query",
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                    },
+                    "query": {
+                        "description": "The GraphQL query string generated to answer the question",
+                        "type": "string"
+                    },
+                    "variables": {
+                        "additionalProperties": true,
+                        "description": "Object containing any GraphQL variables needed for the query",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "query",
+                    "variables",
+                    "confidence"
+                ],
+                "type": "object"
+            }
+        },
+        "template.kg-prompt": {
+            "prompt": "Study the following set of knowledge statements. The statements are written in Cypher format that has been extracted from a knowledge graph. Use only the provided set of knowledge statements in your response. Do not speculate if the answer is not found in the provided set of knowledge statements.\n\nHere's the knowledge statements:\n{% for edge in knowledge %}({{edge.s}})-[{{edge.p}}]->({{edge.o}})\n{%endfor%}\n\nUse only the provided knowledge statements to respond to the following:\n{{query}}\n",
+            "response-type": "text"
+        },
+        "template.question": {
+            "prompt": "{{question}}"
+        },
+        "template.schema-selection": {
+            "prompt": "You are a database schema selection expert. Given a natural language question and available\ndatabase schemas, your job is to identify which schemas are most relevant to answer the question.\n\n## Available Schemas:\n{% for schema in schemas %}\n**{{ schema.name }}**: {{ schema.description }}\nFields:\n{% for field in schema.fields %}\n- {{ field.name }} ({{ field.type }}): {{ field.description }}\n{% endfor %}\n\n{% endfor %}\n\n## Question:\n{{ question }}\n\n## Instructions:\n1. Analyze the question to understand what data is being requested\n2. Examine each schema to understand what data it contains\n3. Select ONLY the schemas that are directly relevant to answering the question\n4. Return your answer as a JSON array of schema names\n\n## Response Format:\nReturn ONLY a JSON array of schema names, nothing else.\nExample: [\"customers\", \"orders\", \"products\"]\n",
+            "response-type": "json",
+            "schema": {
+                "description": "An array of schema names that are relevant to answering the given question",
+                "items": {
+                    "type": "string"
+                },
+                "type": "array"
+            }
+        }
+    },
+    "token-costs": {
+        "anthropic.claude-3-5-sonnet-20240620-v1:0": {
+            "input_price": 3e-06,
+            "model_name": "anthropic.claude-3-5-sonnet-20240620-v1:0",
+            "output_price": 1.5e-05
+        },
+        "anthropic.claude-3-haiku-20240307-v1:0": {
+            "input_price": 2.5e-07,
+            "model_name": "anthropic.claude-3-haiku-20240307-v1:0",
+            "output_price": 1.25e-06
+        },
+        "c4ai-aya-23-8b": {
+            "input_price": 0,
+            "model_name": "c4ai-aya-23-8b",
+            "output_price": 0
+        },
+        "claude-3-5-sonnet-20240620": {
+            "input_price": 3e-06,
+            "model_name": "claude-3-5-sonnet-20240620",
+            "output_price": 1.5e-05
+        },
+        "claude-3-haiku-20240307": {
+            "input_price": 2.5e-07,
+            "model_name": "claude-3-haiku-20240307",
+            "output_price": 1.25e-06
+        },
+        "claude-3-opus-20240229": {
+            "input_price": 1.5e-05,
+            "model_name": "claude-3-opus-20240229",
+            "output_price": 7.5e-05
+        },
+        "claude-3-sonnet-20240229": {
+            "input_price": 3e-06,
+            "model_name": "claude-3-sonnet-20240229",
+            "output_price": 1.5e-05
+        },
+        "cohere.command-r-plus-v1:0": {
+            "input_price": 3e-06,
+            "model_name": "cohere.command-r-plus-v1:0",
+            "output_price": 1.5e-05
+        },
+        "command-r-08-202": {
+            "input_price": 2.5e-06,
+            "model_name": "command-r-08-202",
+            "output_price": 1e-05
+        },
+        "gpt-4o": {
+            "input_price": 5e-06,
+            "model_name": "gpt-4o",
+            "output_price": 1.5e-05
+        },
+        "gpt-4o-2024-05-13": {
+            "input_price": 5e-06,
+            "model_name": "gpt-4o-2024-05-13",
+            "output_price": 1.5e-05
+        },
+        "gpt-4o-2024-08-06": {
+            "input_price": 2.5e-06,
+            "model_name": "gpt-4o-2024-08-06",
+            "output_price": 1e-05
+        },
+        "gpt-4o-mini": {
+            "input_price": 1.5e-07,
+            "model_name": "gpt-4o-mini",
+            "output_price": 6e-07
+        },
+        "llama.cpp": {
+            "input_price": 0,
+            "model_name": "llama.cpp",
+            "output_price": 0
+        },
+        "meta.llama3-1-405b-instruct-v1:0": {
+            "input_price": 5.32e-06,
+            "model_name": "meta.llama3-1-405b-instruct-v1:0",
+            "output_price": 1.6e-05
+        },
+        "meta.llama3-1-70b-instruct-v1:0": {
+            "input_price": 9.9e-07,
+            "model_name": "meta.llama3-1-70b-instruct-v1:0",
+            "output_price": 9.9e-07
+        },
+        "meta.llama3-1-8b-instruct-v1:0": {
+            "input_price": 2.2e-07,
+            "model_name": "meta.llama3-1-8b-instruct-v1:0",
+            "output_price": 2.2e-07
+        },
+        "mistral.mistral-large-2407-v1:0": {
+            "input_price": 4e-06,
+            "model_name": "mistral.mistral-large-2407-v1:0",
+            "output_price": 1.2e-05
+        },
+        "mistral.mixtral-8x7b-instruct-v0:1": {
+            "input_price": 4.5e-07,
+            "model_name": "mistral.mixtral-8x7b-instruct-v0:1",
+            "output_price": 7e-07
+        },
+        "ollama": {
+            "input_price": 0,
+            "model_name": "ollama",
+            "output_price": 0
+        }
+    },
+    "tool": {
+        "knowledge-extraction": {
+            "arguments": [
+                {
+                    "description": "The text chunk",
+                    "name": "text",
+                    "type": "string"
+                }
+            ],
+            "description": "Takes a chunk of text and extracts knowledge in definition and relationship formats. The input is a text chunk",
+            "id": "knowledge-extraction",
+            "name": "Knowledge extraction",
+            "template": "agent-kg-extract",
+            "type": "prompt"
+        },
+        "knowledge-query": {
+            "arguments": [
+                {
+                    "description": "A simple natural language question.",
+                    "name": "question",
+                    "type": "string"
+                }
+            ],
+            "collection": "default",
+            "description": "This tool queries a knowledge base that holds information about domain-specific information.  The question should be a natural language question.",
+            "id": "knowledge-query",
+            "name": "Knowledge query",
+            "type": "knowledge-query"
+        },
+        "llm-completion": {
+            "arguments": [
+                {
+                    "description": "The question which should be asked of the LLM.",
+                    "name": "question",
+                    "type": "string"
+                }
+            ],
+            "description": "This tool queries an LLM for non-domain-specific information.  The question should be a natural language question.",
+            "id": "llm-completion",
+            "name": "LLM text completion",
+            "type": "text-completion"
+        }
+    }
+}
