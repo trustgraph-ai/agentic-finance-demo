@@ -1,0 +1,405 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "name": "Balance Sheets Import",
+    "description": "Imports balance sheet data from an XML source.",
+    "author": "Data Engineer Assistant",
+    "created": "2023-10-27T10:00:00Z"
+  },
+  "format": {
+    "type": "xml",
+    "encoding": "UTF-8",
+    "options": {
+      "record_path": "//entry",
+      "field_attribute": null
+    }
+  },
+  "globals": {
+    "variables": {},
+    "lookup_tables": {}
+  },
+  "preprocessing": [] ,
+  "mappings": [
+    {
+      "source_field": "fiscal_year",
+      "target_field": "fiscal_year",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        },
+        {
+          "type": "not_null"
+        }
+      ]
+    },
+    {
+      "source_field": "cash_and_equivalents",
+      "target_field": "cash_and_equivalents",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "accounts_receivable",
+      "target_field": "accounts_receivable",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "prepaid_expenses",
+      "target_field": "prepaid_expenses",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "other_current_assets",
+      "target_field": "other_current_assets",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "total_current_assets",
+      "target_field": "total_current_assets",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "property_equipment_net",
+      "target_field": "property_equipment_net",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "intangible_assets_net",
+      "target_field": "intangible_assets_net",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "goodwill",
+      "target_field": "goodwill",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "other_assets",
+      "target_field": "other_assets",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "total_non_current_assets",
+      "target_field": "total_non_current_assets",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "total_assets",
+      "target_field": "total_assets",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "accounts_payable",
+      "target_field": "accounts_payable",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "accrued_expenses",
+      "target_field": "accrued_expenses",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "deferred_revenue",
+      "target_field": "deferred_revenue",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "current_debt",
+      "target_field": "current_debt",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "total_current_liabilities",
+      "target_field": "total_current_liabilities",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "long_term_debt",
+      "target_field": "long_term_debt",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "deferred_tax_liabilities",
+      "target_field": "deferred_tax_liabilities",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "other_liabilities",
+      "target_field": "other_liabilities",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "total_non_current_liabilities",
+      "target_field": "total_non_current_liabilities",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "total_liabilities",
+      "target_field": "total_liabilities",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "common_stock",
+      "target_field": "common_stock",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "additional_paid_in_capital",
+      "target_field": "additional_paid_in_capital",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "retained_earnings",
+      "target_field": "retained_earnings",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "source_field": "total_equity",
+      "target_field": "total_equity",
+      "transforms": [
+        {
+          "type": "to_int"
+        }
+      ],
+      "validation": [
+        {
+          "type": "required"
+        }
+      ]
+    }
+  ],
+  "postprocessing": [],
+  "output": {
+    "format": "trustgraph-objects",
+    "schema_name": "balance_sheets",
+    "options": {
+      "confidence": 0.85,
+      "batch_size": 1000
+    },
+    "error_handling": {
+      "on_validation_error": "log_and_skip",
+      "on_transform_error": "log_and_skip",
+      "max_errors": 100
+    }
+  }
+}

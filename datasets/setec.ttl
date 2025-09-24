@@ -1,0 +1,167 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <https://schema.org/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sai: <http://www.setec-astronomy.example.com/ontology/> .
+@prefix address: <http://example.com/addresses/> .
+
+# --- Property Definitions ---
+# Custom properties
+sai:hasAddress a rdf:Property ;
+    rdfs:label "has address" ;
+    rdfs:comment "Indicates the postal address of an organization or entity." .
+
+sai:develops a rdf:Property ;
+    rdfs:label "develops" ;
+    rdfs:comment "Indicates that an organization or division develops a particular product or project." .
+
+# Schema.org properties
+schema:founder a rdf:Property ;
+    rdfs:label "founder" .
+
+schema:ceo a rdf:Property ;
+    rdfs:label "chief executive officer" .
+
+schema:employee a rdf:Property ;
+    rdfs:label "employee" .
+
+schema:legalName a rdf:Property ;
+    rdfs:label "legal name" .
+
+schema:tickerSymbol a rdf:Property ;
+    rdfs:label "ticker symbol" .
+
+schema:foundingDate a rdf:Property ;
+    rdfs:label "founding date" .
+
+schema:industry a rdf:Property ;
+    rdfs:label "industry" .
+
+schema:description a rdf:Property ;
+    rdfs:label "description" .
+
+schema:jobTitle a rdf:Property ;
+    rdfs:label "job title" .
+
+schema:alumniOf a rdf:Property ;
+    rdfs:label "alumni of" .
+
+schema:subOrganization a rdf:Property ;
+    rdfs:label "sub organization" .
+
+schema:name a rdf:Property ;
+    rdfs:label "name" .
+
+schema:startDate a rdf:Property ;
+    rdfs:label "start date" .
+
+schema:organizer a rdf:Property ;
+    rdfs:label "organizer" .
+
+schema:streetAddress a rdf:Property ;
+    rdfs:label "street address" .
+
+schema:addressLocality a rdf:Property ;
+    rdfs:label "locality" .
+
+schema:addressRegion a rdf:Property ;
+    rdfs:label "region" .
+
+schema:postalCode a rdf:Property ;
+    rdfs:label "postal code" .
+
+schema:addressCountry a rdf:Property ;
+    rdfs:label "country" .
+
+# DBpedia properties
+dbo:competitor a rdf:Property ;
+    rdfs:label "competitor" .
+
+# FOAF properties
+foaf:homepage a rdf:Property ;
+    rdfs:label "homepage" .
+
+# --- Company Definition ---
+sai:setec_astronomy a schema:Organization ;
+    rdfs:label "Setec Astronomy Inc." ;
+    schema:legalName "Setec Astronomy Incorporated" ;
+    schema:tickerSymbol "SAI" ;
+    schema:foundingDate "1988-03-15"^^xsd:date ;
+    schema:industry "Aerospace & Defense", "Cybersecurity" ;
+    schema:description "A leading provider of advanced orbital mechanics software and next-generation satellite encryption solutions."@en ;
+    sai:hasAddress address:ADDR-001 ;
+    foaf:homepage <https://www.setec-astronomy.example.com> .
+
+# --- Location ---
+address:ADDR-001
+    a schema:PostalAddress ;
+    rdfs:label "Setec Astronomy Headquarters Address" ;
+    schema:streetAddress "123 Cosine Way" ;
+    schema:addressLocality "Pasadena" ;
+    schema:addressRegion "CA" ;
+    schema:postalCode "91101" ;
+    schema:addressCountry "USA" .
+
+# --- Key Personnel ---
+sai:setec_astronomy schema:founder sai:arthur_bishop .
+sai:setec_astronomy schema:ceo sai:janek_gregor .
+sai:setec_astronomy schema:employee sai:elena_rios, sai:kenji_tanaka .
+
+sai:arthur_bishop a schema:Person ;
+    rdfs:label "Arthur Bishop" ;
+    schema:jobTitle "Founder & Chairman" .
+
+sai:janek_gregor a schema:Person ;
+    rdfs:label "Dr. Janek Gregor" ;
+    schema:jobTitle "Chief Executive Officer (CEO)" ;
+    schema:alumniOf "Massachusetts Institute of Technology" .
+
+sai:elena_rios a schema:Person ;
+    rdfs:label "Elena Rios" ;
+    schema:jobTitle "Chief Financial Officer (CFO)" .
+
+sai:kenji_tanaka a schema:Person ;
+    rdfs:label "Kenji Tanaka" ;
+    schema:jobTitle "Chief Technology Officer (CTO)" .
+
+# --- Corporate Structure & Products ---
+sai:setec_astronomy schema:subOrganization sai:orbital_division, sai:crypto_division .
+
+sai:orbital_division a schema:Organization ;
+    rdfs:label "Orbital Mechanics Division" ;
+    schema:description "Develops trajectory analysis and fleet management software for satellite operators."@en ;
+    sai:develops sai:project_gazer .
+
+sai:crypto_division a schema:Organization ;
+    rdfs:label "Cryptography & Security Division" ;
+    schema:description "Specializes in quantum-resistant encryption for secure communications."@en ;
+    sai:develops sai:project_echidna .
+
+sai:project_gazer a schema:Product ;
+    rdfs:label "Project Gazer" ;
+    schema:description "A high-precision orbital trajectory simulation and fleet management software suite."@en .
+
+sai:project_echidna a schema:Product ;
+    rdfs:label "Project Echidna" ;
+    schema:description "A quantum-resistant encryption platform for satellite communications, forming the basis of the Aegis Shield contract."@en .
+
+# --- Key Events & Contracts ---
+sai:aegis_shield_contract a schema:Event ;
+    rdfs:label "Award of DoD 'Aegis Shield' Contract" ;
+    schema:description "A major $1.2 billion contract to provide encryption services for the next generation of military satellites, based on the Project Echidna platform."@en ;
+    schema:startDate "2022-06-20"^^xsd:date ;
+    schema:organizer sai:setec_astronomy .
+
+# --- Competitors ---
+sai:setec_astronomy dbo:competitor sai:competitor_orbital_dynamics, sai:competitor_cybex_global .
+
+sai:competitor_orbital_dynamics a schema:Organization ;
+    rdfs:label "Orbital Dynamics Corp." ;
+    schema:industry "Aerospace" .
+
+sai:competitor_cybex_global a schema:Organization ;
+    rdfs:label "Cybex Global Security" ;
+    schema:industry "Cybersecurity" .
+
