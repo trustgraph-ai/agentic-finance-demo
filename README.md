@@ -8,6 +8,8 @@ This demo simulates being a financial analyst at the hypothetic company, Setec A
 - [SEC EDGAR MCP Server](https://github.com/trustgraph-ai/sec-edgar-mcp)
 - DuckDuckGo search
 
+[![Agentic Finance Demo](https://img.youtube.com/vi/e_R5oK4V7ds/maxresdefault.jpg)](https://www.youtube.com/watch?v=e_R5oK4V7ds)
+
 ## Deploy TrustGraph
 
 Begin with a [TrustGraph deployment](https://docs.trustgraph.ai/deployment/) of your choice.
