@@ -1,6 +1,6 @@
 # Agentic Finance Demo
 
-This demo simulates being a financial analyst at the hypothetic company, Setec Astronomy. This demo includes:
+This demo simulates being a financial analyst at the hypothetical company, Setec Astronomy. This demo includes:
 
 - Setec Astronomy company data as a [knowledge graph](https://github.com/trustgraph-ai/agentic-finance-demo/blob/main/datasets/setec.ttl)
 - Setec Astronomy financial data as [structured data](https://github.com/trustgraph-ai/agentic-finance-demo/blob/main/datasets/setec-balance-sheets.xml)
