@@ -41,17 +41,19 @@ Once TrustGraph is fully running, launch the Yahoo Finance and SEC EDGAR MCP ser
 pip3 install mcp
 ```
 
-To launch the Yahoo Finance MCP server:
+> [!NOTE]
+> You will need to clone the repos for the [Yahoo Finance](https://github.com/trustgraph-ai/yfinance-mcp) and [SEC EDGAR](https://github.com/trustgraph-ai/sec-edgar-mcp) MCP servers prior to running them.
+
+To launch the Yahoo Finance MCP server, navigate to the directory where you cloned it:
 
 ```
 uv run mcp dev src/yfmcp/server.py
 ```
 
-In another terminal window, start the SEC EDGAR MCP server:
+In another terminal window, start the SEC EDGAR MCP server by navigating to its directory:
 
 ```
 python3 sec_edgar_mcp/server.py --port 9890 --transport streamable-http
-
 ```
 
 You will need to leave the MCP server terminal windows open while the MCP servers are running.
